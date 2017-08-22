@@ -1,0 +1,50 @@
+﻿SpringMVC5_2 project:
+- Integrate Hibernate into Spring MVC
+- Ajax and json return type (part 2: select/insert data from db)
+- Remember add these annotations: @Transactional, @ResponseBody
+- Learn about Interceptor and how to use it
+
+
+1/ src -> nhatnghe.entity: 5 entities of eshop
+
+2/ src -> nhatnghe.controller:
+- AccountController: login/register function
+(vd1: edit link on browser to .../account/login.php to test this function)
+(vd1: edit link on browser to .../account/register.php to test this function)
+- AjaxController: demo about Ajax and json return type
+(vd1: edit link on browser to .../ajax/hello.php to test this function)
+(vd2: edit link on browser to .../ajax/json1.php to test this function)
+(vd3: edit link on browser to .../ajax/json2.php to test this function)
+(vd4: edit link on browser to .../ajax/json3.php to test this function)
+(vd5: edit link on browser to .../ajax/json4.php to test this function)
+(vd6: edit link on browser to .../ajax/json5.php to test this function)
+(vd7: edit link on browser to .../ajax/json6.php to test this function)
+(vd8: edit link on browser to .../ajax/index.php to test this function)
+- CategoryController: select/insert data from db and display on view by ajax
+(vd: edit link on browser to .../category/index.php to test this function)
+- HomeController: check function which demo about Interceptor, look at console when run it
+(vd: edit link on browser to .../home/index.php to test this function)
+- OrderController: check function which demo about Interceptor, look at console when run it
+(vd: edit link on browser to .../order/checkout.php to test this function)
+It'll redirect to login form because have not login, do not allow order or another functions...
+
+3/ src -> nhatnghe.inter:
+- MyInterceptor: demo life cycle of Interceptor
+- AuthenticateInterceptor: check use login or not
+* Note: do not run these files above because it'll inject into project 
+by spring-config-interceptor file
+
+4/ WebContent: create index.jsp file at here
+
+5/ WebContent -> js: copy jquery-1.10.2.min.js file and paste at here
+
+6/ WebContent -> WEB-INF:
+(should be create views folder, configs at here for security)
+- lib: remmember copy all of libs to use spring framework and some others libs
+- spring-configs: 
+  + spring-config-mvc.xml file: configs view and controller
+  + spring-config-hibernate.xml file: config to integrate Hibernate into Spring MVC
+  + spring-config-interceptor.xml file: config to inject Interceptor into project
+- views: include all view (jsp file) of project
+
+7/ WebContent -> web.xml: configs index.jsp file, Dispatcher and UTF-8 Filter
